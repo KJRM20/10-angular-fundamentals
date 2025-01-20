@@ -10,7 +10,7 @@ export class HeroComponent {
   clicked = output<string>();
 
   onclick(): void{
-    console.log("Try button was pressed.");
+    console.log("Sign up button was pressed.");
   }
 
   ngAfterViewInit(): void {
