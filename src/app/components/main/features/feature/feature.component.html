@@ -1,0 +1,37 @@
+<article  class="article"  [attr.aria-label]="'Article describing features and testimonial of ' + title()">
+  <div class="article__column">
+    <header class="article__header">
+      <small class="article__tagline">{{ tagline() }}</small>
+      <h2 class="article__title">{{ title() }}</h2>
+    </header>
+
+    <div class="article__content">
+        <div>
+            @if (points()){
+              @for (point of points(); track $index) {
+                <div class="article__point">
+                  <span role="img">{{ point.icon }}</span>
+                  <p [innerHTML]="point.text"></p>
+                </div>
+              }
+            } @else{
+            <p class="article__text" [innerHTML]="content()"></p>
+            }
+        </div>
+      <app-testimonial
+        [text]="testimonial()?.text"
+        [author]="testimonial()?.author"
+        [authorImage]="testimonial()?.image"
+        [place]="testimonial()?.place"
+      ></app-testimonial>
+    </div>
+  </div>
+
+  <figure class="article__column">
+    <video autoplay loop muted playsinline>
+        @for (video of videos(); track $index) {
+            <source [src]='video.src' [type]='video.type'>
+        }
+    </video>
+  </figure>
+</article>

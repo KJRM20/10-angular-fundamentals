@@ -1,5 +1,5 @@
-@use '../../ui/styles/mixins.scss' as mx;
-@use '../../ui/styles/variables.scss' as vr;
+@use '../../../ui/styles/mixins.scss' as mx;
+@use '../../../ui/styles/variables.scss' as vr;
 
 .menu {
     @include mx.flex-container(center, center, 30px);
