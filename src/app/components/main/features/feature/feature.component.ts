@@ -14,4 +14,14 @@ export class FeatureComponent {
   public points = input<{icon: string; text: string}[]>();
   public testimonial = input<{text: string; author: string; place: string, image: string}>();
   public videos = input<{src: string; type: string}[]>();
+
+  ngAfterViewInit(): void {
+    const video = document.querySelector('video') as HTMLVideoElement;
+    if (video) {
+      video.muted = true;
+      video.play().catch(error => {
+        console.error('Error playing video automatically:', error);
+      });
+    }
+  }
 }
