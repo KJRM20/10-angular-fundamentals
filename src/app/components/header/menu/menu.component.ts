@@ -8,6 +8,21 @@ import { LanguageModalService } from '../../../language-modal.service';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
+  menuLinks = [
+    {
+      text: 'Pricing',
+      href: '#'
+    },
+    {
+      text: 'Careers',
+      href: '#'
+    },
+    {
+      text: 'Login',
+      href: '#'
+    }
+  ]
+
   constructor(private languageModalService: LanguageModalService) {}
 
   openModal(): void {

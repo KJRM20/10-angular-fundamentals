@@ -9,8 +9,9 @@
             <span>English</span>
         </button>                    
     </li>
-    <li class="menu__item"><a class="menu__link" href="#">Pricing</a></li>
-    <li class="menu__item"><a class="menu__link" href="#">Careers</a></li>
-    <li class="menu__item"><a class="menu__link" href="#">Login</a></li>
+
+    @for (menuLink of menuLinks; track $index) {
+        <li class="menu__item"><a class="menu__link" [href]="menuLink.href">{{menuLink.text}}</a></li>
+    }
     <li class="menu__item"><a class="menu__button-try" href="#">Try for free</a></li>
 </menu> 

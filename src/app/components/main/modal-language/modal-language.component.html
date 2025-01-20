@@ -11,45 +11,9 @@
             </button>
         </header>
         <div class="language-modal__content">
-            <button class="language-modal__button language-modal__button--active" role="button" tabindex="0">English</button>
-            <button class="language-modal__button">Shqip</button>
-            <button class="language-modal__button">Bosanski</button>
-            <button class="language-modal__button">Български</button>
-            <button class="language-modal__button">简体中文</button>
-            <button class="language-modal__button">繁體中文</button>
-            <button class="language-modal__button">Hrvatski</button>
-            <button class="language-modal__button">Čeština</button>
-            <button class="language-modal__button">Dansk</button>
-            <button class="language-modal__button">Nederlands</button>
-            <button class="language-modal__button">Eesti</button>
-            <button class="language-modal__button">Suomi</button>
-            <button class="language-modal__button">Français</button>
-            <button class="language-modal__button">Deutsch</button>
-            <button class="language-modal__button">Ελληνικά</button>
-            <button class="language-modal__button">हिन्दी</button>
-            <button class="language-modal__button">Magyar</button>
-            <button class="language-modal__button">Bahasa Indonesia</button>
-            <button class="language-modal__button">Italiano</button>
-            <button class="language-modal__button">日本語</button>
-            <button class="language-modal__button">ಕನ್ನಡ</button>
-            <button class="language-modal__button">한국어</button>
-            <button class="language-modal__button">Latviešu</button>
-            <button class="language-modal__button">Lietuvių</button>
-            <button class="language-modal__button">Norsk</button>
-            <button class="language-modal__button">Polski</button>
-            <button class="language-modal__button">Português (Brasil)</button>
-            <button class="language-modal__button">Română</button>
-            <button class="language-modal__button">Русский</button>
-            <button class="language-modal__button">Српски</button>
-            <button class="language-modal__button">Slovenščina</button>
-            <button class="language-modal__button">Español</button>
-            <button class="language-modal__button">Svenska</button>
-            <button class="language-modal__button">Tagalog</button>
-            <button class="language-modal__button">ไทย</button>
-            <button class="language-modal__button">Türkçe</button>
-            <button class="language-modal__button">Українська</button>
-            <button class="language-modal__button">O‘zbek</button>
-            <button class="language-modal__button">Tiếng Việt</button>
+            @for (language of languages; track $index) {                
+                <button class="language-modal__button" [ngClass]="{'language-modal__button--active': activeLanguage == language}" role="button" [tabIndex]="$index">{{language}}</button>
+            }        
         </div>
     </div>
 </dialog>
