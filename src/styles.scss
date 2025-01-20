@@ -1,6 +1,6 @@
-@use './styles/reset.scss';
-@use './styles/fonts.scss';
+@use '../src/app/ui/styles/reset.scss';
+@use '../src/app/ui/styles/variables.scss' as vr;
 
 html{
-    font-family: mx.$font-primary;
+    font-family: vr.$font-primary;
 }

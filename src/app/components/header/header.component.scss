@@ -1,5 +1,9 @@
+@use '../../ui/styles/mixins.scss' as mx;
+@use '../../ui/styles/variables.scss' as vr;
+
+
 .header {
-  background-color: mx.$color-header;
+  background-color: vr.$color-header;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -20,52 +24,3 @@
   }
 }
 
-.menu {
-  @include mx.flex-container(center, center, 30px);
-  list-style: none;
-
-  &__item {
-    @include mx.font-to-use(15);
-  }
-
-  &__button {
-    @include mx.font-to-use(15);
-    @include mx.flex-container(start, end, 10px);
-    @include mx.button-parameters(transparent, none, 0, mx.$color-gray-primary);
-    padding: 0;
-    height: 18.4px;
-
-    &:hover {
-      color: mx.$color-black;
-    }
-
-    & svg {
-      width: 14px;
-      vertical-align: -1px;
-    }
-  }
-
-  &__link {
-    color: mx.$color-gray-primary;
-    text-decoration: none;
-    &:hover {
-      color: mx.$color-black;
-    }
-  }
-
-  &__button-try {
-    @include mx.button-parameters(
-      transparent,
-      solid 1px #b3b3b3,
-      20px,
-      mx.$color-gray-primary,
-      1px 1px 2px mx.$color-primary-shadow
-    );
-    @include mx.font-to-use(15, 600);
-    padding: 6px 16px;
-    margin-right: 15px;
-    &:hover {
-      color: mx.$color-black;
-    }
-  }
-}
