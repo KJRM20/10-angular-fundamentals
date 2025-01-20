@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
+import { LanguageModalService } from '../../../language-modal.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './menu.component.scss'
 })
 export class MenuComponent {
+  constructor(private languageModalService: LanguageModalService) {}
 
+  openModal(): void {
+    this.languageModalService.emitMenuEvent(true);
+  }
 }

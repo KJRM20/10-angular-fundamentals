@@ -3,12 +3,13 @@
 
 .card {
   @include mx.flex-container(start, start, 15px, column);
+  font-family: vr.$font-primary;
   grid-row: 1;
 
   &__icon {
     @include mx.flex-container(start, center);
     padding-left: 15px;
-    & svg {
+    & img {
       height: 30px;
     }
   }

@@ -1,9 +1,11 @@
 
 @use '../../../ui/styles/mixins.scss' as mx;
 @use '../../../ui/styles/variables.scss' as vr;
+@use'../../../ui/styles/animations.scss';
 
 .hero{
     @include mx.flex-container(start, center, 16px, column);
+    font-family: vr.$font-primary;
     margin-top: 220px;
     padding: 0 180px;
     width: 100%;
