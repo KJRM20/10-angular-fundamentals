@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
+  clicked = output<string>();
+
+  onclick(): void{
+    console.log("Try button was pressed.");
+  }
+
   ngAfterViewInit(): void {
     const video = document.querySelector('video') as HTMLVideoElement;
     if (video) {
@@ -16,4 +22,6 @@ export class HeroComponent {
       });
     }
   }
+
+
 }
