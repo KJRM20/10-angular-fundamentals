@@ -12,16 +12,4 @@ export class HeroComponent {
   onclick(): void{
     console.log("Sign up button was pressed.");
   }
-
-  ngAfterViewInit(): void {
-    const video = document.querySelector('video') as HTMLVideoElement;
-    if (video) {
-      video.muted = true; 
-      video.play().catch(error => {
-        console.error('Error playing video automatically:', error);
-      });
-    }
-  }
-
-
 }

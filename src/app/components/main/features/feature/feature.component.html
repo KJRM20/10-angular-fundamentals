@@ -29,7 +29,7 @@
   </div>
 
   <figure class="article__column">
-    <video autoplay loop muted playsinline>
+    <video loop playsinline>
         @for (video of videos(); track $index) {
             <source [src]='video.src'>
         }
