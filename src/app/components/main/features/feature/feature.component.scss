@@ -3,56 +3,9 @@
 
 .article {
   @include mx.flex-container(space-between, center, 24px, row, wrap);
-  min-width: 1368px;
 
   &__column {
     @include mx.flex-container(center, start, 24px, column);
     width: 45%;
-
-    & video {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 2px 30px 40px vr.$color-primary-shadow;
-    }
-  }
-
-  &__header {
-    @include mx.flex-container(start, start, 24px, column);
-  }
-
-  &__tagline {
-    @include mx.font-to-use(20, 400);
-    color: #8f8b8b;
-  }
-
-  &__title {
-    @include mx.font-to-use(44, 600, vr.$font-secundary);
-    @include mx.text-properties(normal, 1.1);
-    color: vr.$color-black-secondary;
-  }
-
-  &__content {
-    @include mx.flex-container(start, start, 30px, column);
-  }
-
-  &__text {
-    @include mx.font-to-use(18);
-    @include mx.text-properties(pretty, 1.8);
-  }
-
-  &__point {
-    @include mx.font-to-use(18);
-    @include mx.flex-container(start, center, 10px);
-    @include mx.text-properties(normal, 2.8);
-
-    & span {
-      @include mx.flex-container(center, center);
-      width: 40px;
-      height: 40px;
-      background-color: vr.$color-white;
-      border: solid 1px vr.$color-white-secondary;
-      border-radius: 50%;
-      box-shadow: vr.$shadow-primary;
-    }
   }
 }

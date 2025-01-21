@@ -1,9 +1,12 @@
 import { Component, input } from '@angular/core';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { FeatureHeaderComponent } from './feature-header/feature-header.component';
+import { FeatureContentComponent } from "./feature-content/feature-content.component";
+import { FeatureVideoComponent } from "./feature-video/feature-video.component";
 
 @Component({
   selector: 'app-feature',
-  imports: [TestimonialComponent],
+  imports: [TestimonialComponent, FeatureHeaderComponent, FeatureContentComponent, FeatureVideoComponent],
   templateUrl: './feature.component.html',
   styleUrl: './feature.component.scss'
 })

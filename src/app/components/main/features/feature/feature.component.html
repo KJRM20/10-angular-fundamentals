@@ -1,38 +1,18 @@
-<article  class="article"  [attr.aria-label]="'Article describing features and testimonial of ' + title()">
+<article  class="article" [attr.aria-label]="'Article describing features and testimonial of ' + title()">
   <div class="article__column">
-    <header class="article__header">
-      <small class="article__tagline">{{ tagline() }}</small>
-      <h2 class="article__title">{{ title() }}</h2>
-    </header>
-
-    <div class="article__content">
-        <div>
-            @if (points()){
-              @for (point of points(); track $index) {
-                <div class="article__point">
-                  <span role="img">{{ point.icon }}</span>
-                  <p [innerHTML]="point.text"></p>
-                </div>
-              }
-            } @else{
-            <p class="article__text" [innerHTML]="content()"></p>
-            }
-        </div>
-        
-      <app-testimonial
-        [text]="testimonial()?.text"
-        [author]="testimonial()?.author"
-        [authorImage]="testimonial()?.image"
-        [place]="testimonial()?.place"
-      ></app-testimonial>
-    </div>
+    <app-feature-header
+      [title]="title()"
+      [tagline]="tagline()"
+    ></app-feature-header>
+    <app-feature-content
+      [content]="content()"
+      [points]="points()"
+      [testimonial]="testimonial()"
+    ></app-feature-content>
   </div>
-
   <figure class="article__column">
-    <video loop playsinline>
-        @for (video of videos(); track $index) {
-            <source [src]='video.src'>
-        }
-    </video>
+    <app-feature-video
+      [videos]="videos()"
+    ></app-feature-video>
   </figure>
 </article>
